@@ -1,0 +1,5 @@
+div > *:not(:last-child) {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 3px;
+}

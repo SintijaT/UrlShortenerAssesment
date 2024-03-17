@@ -1,0 +1,17 @@
+<div class="col-12 md:col-4">
+  <div class="p-inputgroup">
+    <button
+      type="button"
+      pButton
+      pRipple
+      label="Create new shortened URL"
+      (click)="createUrl(requestItem.original_url)"
+    ></button>
+    <input
+      type="text"
+      pInputText
+      placeholder="URL"
+      [(ngModel)]="requestItem.original_url"
+    />
+  </div>
+</div>
