@@ -23,7 +23,7 @@ def deleteItem(request, event_id) -> Response:
 
 
 @api_view(['POST'])
-def shortenUrl(request) -> Response:  # todo: define basemodel with actually expected fields: user_id and original_url
+def shortenUrl(request) -> Response:
     data = _add_shorten_url(request.data)
     serializer = ItemSerializer(data=data)
     if not serializer.is_valid():
@@ -33,7 +33,6 @@ def shortenUrl(request) -> Response:  # todo: define basemodel with actually exp
 
 
 def _add_shorten_url(data: Dict) -> Dict:
-    # todo: actually shorten link
     data = Item.objects.create(
         short_url=f'not_implemented_{random()}',
         original_url=data['original_url'],
